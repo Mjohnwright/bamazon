@@ -150,35 +150,6 @@ function userReceipt(itemIdInNode, quantitySelected) {
       connection.end();
     }
   );
-}
+};
 
-// The first should ask them the ID of the product they would like to buy.
-// The second message should ask how many units of the product they would like to buy.
 
-// Created db in MySql called 'bamazon'
-// created table in bamazon called 'products'
-// added  10 items to the table 'products'
-// created Node application called bamazonCustomer.js
-
-// required inquirer and MySql npms and assigned them variables.
-
-// established connection with the MySql Server
-
-// Initialize App
-//   function to display the DB and call the start function
-
-// Start Function
-//   displays a question asking user for product ID
-//   assign a variable to their answer
-//   displays a second question asking how many units they want to buy;
-//   assign a varianble to their answer.
-
-// checkOrder function
-//   compared the 2 answers with database to see if item is in stock;
-//     IF the item is not in stock display "insufficient quantity" and call initialize app function;
-//
-
-//  IF the item IS in stock then:
-//         This means updating the SQL database to reflect the remaining quantity.
-//         Once the update goes through, show the customer the total cost of their purchase.
-//         Initialize db function;
