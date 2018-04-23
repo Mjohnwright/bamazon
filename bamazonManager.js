@@ -99,12 +99,12 @@ function viewProductsforSale() {
 // FUNCTION VIEW LOW INVENTORY
 //function that displays where inventory is low
 function viewLowInventory() {
-  connection.query("SELECT * FROM products WHERE stock_quantity < 55", function(
+  connection.query("SELECT * FROM products WHERE stock_quantity < 30", function(
     err,
     results
   ) {
     if (err) throw err;
-
+    console.log("These are the products with less than 30 items in stock")
     for (var i = 0; i < results.length; i++) {
       console.table([
         {
@@ -152,11 +152,27 @@ function addToInventory() {
         [quantityInNode, productInNode],
         function(err, results) {
           if (err) throw err;
-          // console.log("The updated quantity for " + ProductInNode + " is: " + quantityInNode);
+
+
+
+
+
+          // console.log("The updated quantity for " + ProductInNode + " is: " + quantityInNode);  WHY DOES THIS CAUSE AN ERROR!!!!!!!!!!!!!!!!!!!!!!!!!!
         }
       );
     });
-  // viewProductsforSale(); //  WHEN I ACTIVATE THIS LIKE IT RUNS BEFORE I CAN INPUT DATA!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    myFunction();
+    var delay;
+    function myFunction() {
+      delay = setTimeout(purchase, 10000);
+    }
+
+    function purchase() {
+      viewProductsforSale(); //  THIS IS NO GOOD SINCE I AM WAITING FOR THE USER INPUT...NOT A TIME LAPSE
+      
+    }
+
+
   // connection.end();
 }
 
@@ -214,7 +230,7 @@ function addNewProduct() {
         function(err, results) {
         }
       );
-      console.log(productInNode);
+      
 
     });
 }

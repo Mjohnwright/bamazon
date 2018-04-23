@@ -77,7 +77,7 @@ function start() {
     .then(function(answer) {
       var itemIdInNode = answer.productID;
       var quantitySelected = answer.quantity;
- 
+
       connection.query(
         "SELECT * FROM products WHERE item_id = ?",
         [itemIdInNode],
@@ -89,7 +89,14 @@ function start() {
           var itemIdInNode = answer.productID;
           var quantitySelected = answer.quantity;
           console.log(
-            "You would like " + quantitySelected + " pairs of " + results[0].product_name + ", which is Item ID # " + itemIdInNode + ".");
+            "You would like " +
+              quantitySelected +
+              " pairs of " +
+              results[0].product_name +
+              ", which is Item ID # " +
+              itemIdInNode +
+              "."
+          );
 
           var isThereEnough = results[0].stock_quantity;
 
@@ -98,11 +105,34 @@ function start() {
             //   JSON.stringify("Results = " + results[0].stock_quantity)
             // ); // [ RowDataPacket { stock_quantity: 4 } ]
 
-            console.log("Sorry, we have that quantity in stock.  Please choose another item.");
-            makePurchase(itemIdInNode, quantitySelected);
+            console.log("Great new!  We have that quantity in stock.  ");
+            // setTimeout(makePurchase(itemIdInNode, quantitySelected), 3000); //THIS DOES NOT WORK!
+            // setTimeout(makePurchase(itemIdInNode, quantitySelected), 3000); //THIS DOES NOT WORK!
+            // makePurchase(itemIdInNode, quantitySelected);
+            myFunction();
+            var delay;
+            function myFunction() {
+              delay = setTimeout(purchase, 6000);
+            }
+
+            function purchase() {
+              makePurchase(itemIdInNode, quantitySelected);
+            }
           } else {
-            console.log("We do not have your order in stock");
-            displayCatalog();
+            console.log(
+              "We are sorry.  We do not have your order in stock.  Please choose another item."
+            );
+            myFunction();
+            var delay;
+            function myFunction() {
+              delay = setTimeout(purchase, 4000);
+            }
+
+            function purchase() {
+              displayCatalog();
+              
+            }
+            
           }
         }
       );
@@ -150,6 +180,4 @@ function userReceipt(itemIdInNode, quantitySelected) {
       connection.end();
     }
   );
-};
-
-
+}
