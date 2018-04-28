@@ -26,5 +26,5 @@ Using the following NPM add-ons:<br />
     var cTable = require("console.table") for organizing and displaying the console output neatly.<br />
 <br />
 <br />
-Link to the video demonstrating the Bamazon:<br />
+Link to the video demonstrating Bamazon:<br />
 https://drive.google.com/open?id=1myM5Ycymp9T8ULY79YtZSIFycjTSSPl3'
