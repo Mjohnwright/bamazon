@@ -27,7 +27,6 @@ displayCatalog();
 //function that displays the items available in the store
 function displayCatalog() {
   connection.query("SELECT * FROM products", function(err, results) {
-    console.log(" ITEM ID ");
     console.log("---------------------------------------------");
     for (var i = 0; i < results.length; i++) {
       var price = results[i].price;
@@ -36,7 +35,7 @@ function displayCatalog() {
           "Item Id": results[i].item_id,
           "Product Name": results[i].product_name,
           Price: "$" + price.toFixed(2),
-          "Stock Quantity": results[i].stock_quantity
+          // "Stock Quantity": results[i].stock_quantity
         }
       ]);
       console.log("----------------------------------------------");
@@ -82,9 +81,6 @@ function start() {
         "SELECT * FROM products WHERE item_id = ?",
         [itemIdInNode],
         function(err, results) {
-          // console.log("ID: " + itemIdInNode);
-          // console.log("QTY: " + quantitySelected);
-          // console.log("OUTER RESULTS = " + JSON.stringify(results));
           if (err) throw err;
           var itemIdInNode = answer.productID;
           var quantitySelected = answer.quantity;
@@ -109,30 +105,13 @@ function start() {
             // setTimeout(makePurchase(itemIdInNode, quantitySelected), 3000); //THIS DOES NOT WORK!
             // setTimeout(makePurchase(itemIdInNode, quantitySelected), 3000); //THIS DOES NOT WORK!
             // makePurchase(itemIdInNode, quantitySelected);
-            myFunction();
-            var delay;
-            function myFunction() {
-              delay = setTimeout(purchase, 6000);
-            }
 
-            function purchase() {
-              makePurchase(itemIdInNode, quantitySelected);
-            }
+            makePurchase(itemIdInNode, quantitySelected);
           } else {
             console.log(
               "We are sorry.  We do not have your order in stock.  Please choose another item."
             );
-            myFunction();
-            var delay;
-            function myFunction() {
-              delay = setTimeout(purchase, 4000);
-            }
-
-            function purchase() {
-              displayCatalog();
-              
-            }
-            
+            displayCatalog();
           }
         }
       );

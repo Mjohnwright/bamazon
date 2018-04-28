@@ -49,27 +49,23 @@ function managerView() {
       }
     ])
     .then(function(value) {
-      console.log(value);
       switch (value.managerMenu) {
-        //    console.log(value);
         case "View Products for Sale":
-          console.log("You chose 1");
           viewProductsforSale();
           break;
         case "View Low Inventory":
-          console.log("You chose 2");
           viewLowInventory();
           break;
         case "Add to Inventory":
-          console.log("You chose 3");
           addToInventory();
           break;
         case "Add new Product":
-          console.log("You chose 4");
           addNewProduct();
       }
     });
+
 }
+
 
 //*********************************************************************************** */
 // FUNCTION DISPLAY CATALOG
@@ -91,20 +87,22 @@ function viewProductsforSale() {
       ]);
       console.log("----------------------------------------------");
     }
+    
   });
-  connection.end();
+  managerView();
+  // connection.end();
 }
 
 //*********************************************************************************** */
 // FUNCTION VIEW LOW INVENTORY
 //function that displays where inventory is low
 function viewLowInventory() {
-  connection.query("SELECT * FROM products WHERE stock_quantity < 30", function(
+  connection.query("SELECT * FROM products WHERE stock_quantity < 40", function(
     err,
     results
   ) {
     if (err) throw err;
-    console.log("These are the products with less than 30 items in stock")
+    console.log("These are the products with less than 30 items in stock");
     for (var i = 0; i < results.length; i++) {
       console.table([
         {
@@ -142,7 +140,9 @@ function addToInventory() {
           return false;
         }
       }
+
     ])
+
     .then(function(answer) {
       var productInNode = answer.productName;
       var quantityInNode = answer.productQuantity;
@@ -153,25 +153,10 @@ function addToInventory() {
         function(err, results) {
           if (err) throw err;
 
-
-
-
-
-          // console.log("The updated quantity for " + ProductInNode + " is: " + quantityInNode);  WHY DOES THIS CAUSE AN ERROR!!!!!!!!!!!!!!!!!!!!!!!!!!
         }
+
       );
     });
-    myFunction();
-    var delay;
-    function myFunction() {
-      delay = setTimeout(purchase, 10000);
-    }
-
-    function purchase() {
-      viewProductsforSale(); //  THIS IS NO GOOD SINCE I AM WAITING FOR THE USER INPUT...NOT A TIME LAPSE
-      
-    }
-
 
   // connection.end();
 }
@@ -225,12 +210,9 @@ function addNewProduct() {
       connection.query(
         "INSERT INTO products (product_name, department_name, price, stock_quantity) VALUES (?, ?, ?, ?)",
         [productInNode, departmentInNode, priceInNode, quantityInNode],
-        
 
-        function(err, results) {
-        }
+        function(err, results) {}
       );
-      
-
     });
+    // connection.end();
 }
