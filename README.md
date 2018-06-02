@@ -1,5 +1,5 @@
 
-MySQL-Node-Bamazon
+{{ MySQL-Node-Bamazon }} 
 <br />
 Amazon-like storefront using MySQL and Node.js. It is comprised of two apps - one for customer orders and one for manager actions.<br />
 <br />
@@ -12,7 +12,7 @@ BamazonCustomer:<br />
     depletes the stock from the store's inventory<br />
 <br />
 <br />
-BamazonManager - allows a manager to:<br />
+BamazonManager - allows a manager to:<br/>
 <br />
     View Products for Sale<br />
     View Low Inventory<br />
@@ -27,4 +27,4 @@ Using the following NPM add-ons:<br />
 <br />
 <br />
 Link to the video demonstrating Bamazon:<br />
-https://drive.google.com/open?id=1myM5Ycymp9T8ULY79YtZSIFycjTSSPl3'
+https://drive.google.com/open?id=1myM5Ycymp9T8ULY79YtZSIFycjTSSPl3
