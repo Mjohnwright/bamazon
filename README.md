@@ -1,30 +1,33 @@
+# :bullettrain_side: Bamazon!
 
-{{ MySQL-Node-Bamazon }} 
-<br />
-Amazon-like storefront using MySQL and Node.js. It is comprised of two apps - one for customer orders and one for manager actions.<br />
-<br />
-<br />
-BamazonCustomer:<br />
-<br />
-    displays a table with the inventory<br />
-    takes a customer's order<br />
-    computes the cost<br />
-    depletes the stock from the store's inventory<br />
-<br />
-<br />
-BamazonManager - allows a manager to:<br/>
-<br />
-    View Products for Sale<br />
-    View Low Inventory<br />
-    Add to Inventory<br />
-    Add New Product<br />
-<br />
-<br />
-Using the following NPM add-ons:<br />
-<br />
-    var inquirer = require("inquirer") for asking the user questions<br />
-    var cTable = require("console.table") for organizing and displaying the console output neatly.<br />
-<br />
-<br />
-Link to the video demonstrating Bamazon:<br />
-https://drive.google.com/open?id=1myM5Ycymp9T8ULY79YtZSIFycjTSSPl3
+### Overview
+Amazon-like storefront using MySQL and Node.js. It is comprised of two apps - one for customer orders and one for manager actions.
+
+### Functionality
+
+* BamazonCustomer:
+    ** Displays a table with the current store inventory
+    ** Takes a customer's order
+    ** Computes the cost and prints a receipt
+    ** Updates the inventory subtracting the latest purchase
+
+* BamazonManager 
+    ** View current inventory
+    ** View low inventory (set to < 20)
+    ** Add to Inventory
+    ** Add a new product line
+
+### Technology
+
+* MySql: Relational Database
+* JavaScript: Functional program for logic
+* Using the following NPM add-ons:
+    ** var inquirer = require("inquirer") for asking the user questions
+    ** var cTable = require("console.table") for organizing and displaying the console output neatly.
+
+### Video Link
+<strong>[Bamazon store app]</strong>(https://drive.google.com/open?id=1myM5Ycymp9T8ULY79YtZSIFycjTSSPl3)
+
+### Screenshot
+![Full Size](assets/bamazon.png)
+
