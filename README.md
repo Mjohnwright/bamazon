@@ -5,13 +5,13 @@ Amazon-like storefront using MySQL and Node.js. It is comprised of two apps - on
 
 ### Functionality
 
-* BamazonCustomer:
+## BamazonCustomer:
     1. Displays a table with the current store inventory
     2. Takes a customer's order
     3. Computes the cost and prints a receipt
     4. Updates the inventory subtracting the latest purchase
 
-* BamazonManager 
+## BamazonManager 
     1. View current inventory
     2. View low inventory (set to < 20)
     3. Add to Inventory
