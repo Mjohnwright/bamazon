@@ -6,27 +6,27 @@ Amazon-like storefront using MySQL and Node.js. It is comprised of two apps - on
 ### Functionality
 
 * BamazonCustomer:
-    ** Displays a table with the current store inventory
-    ** Takes a customer's order
-    ** Computes the cost and prints a receipt
-    ** Updates the inventory subtracting the latest purchase
+    1. Displays a table with the current store inventory
+    2. Takes a customer's order
+    3. Computes the cost and prints a receipt
+    4. Updates the inventory subtracting the latest purchase
 
 * BamazonManager 
-    ** View current inventory
-    ** View low inventory (set to < 20)
-    ** Add to Inventory
-    ** Add a new product line
+    1. View current inventory
+    2. View low inventory (set to < 20)
+    3. Add to Inventory
+    4. Add a new product line
 
 ### Technology
 
 * MySql: Relational Database
 * JavaScript: Functional program for logic
-* Using the following NPM add-ons:
-    ** var inquirer = require("inquirer") for asking the user questions
-    ** var cTable = require("console.table") for organizing and displaying the console output neatly.
+* NPM add-ons:
+    1. inquirer = for asking the user questions
+    2. cTable = for organizing and displaying the console output neatly.
 
 ### Video Link
-<strong>[Bamazon store app](https://drive.google.com/open?id=1myM5Ycymp9T8ULY79YtZSIFycjTSSPl3)</strong>
+<strong>[Bamazon store app video demonstration](https://drive.google.com/open?id=1myM5Ycymp9T8ULY79YtZSIFycjTSSPl3)</strong>
 
 ### Screenshot
 ![Full Size](assets/bamazon.png)
