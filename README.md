@@ -1,4 +1,4 @@
-# :bullettrain_side: Bamazon!
+# :department_store: Bamazon!
 
 ### Overview
 Amazon-like storefront using MySQL and Node.js. It is comprised of two apps - one for customer orders and one for manager actions.
@@ -26,7 +26,7 @@ Amazon-like storefront using MySQL and Node.js. It is comprised of two apps - on
     ** var cTable = require("console.table") for organizing and displaying the console output neatly.
 
 ### Video Link
-<strong>[Bamazon store app]</strong>(https://drive.google.com/open?id=1myM5Ycymp9T8ULY79YtZSIFycjTSSPl3)
+<strong>[Bamazon store app](https://drive.google.com/open?id=1myM5Ycymp9T8ULY79YtZSIFycjTSSPl3)</strong>
 
 ### Screenshot
 ![Full Size](assets/bamazon.png)
