@@ -19,7 +19,7 @@ Amazon-like storefront using MySQL and Node.js. It is comprised of two apps - on
 
 ## Technology
 
-* MySql: Relational Database
+* MySQL: Relational Database
 * JavaScript: Functional program for logic
 * NPM add-ons:
     1. inquirer = for asking the user questions
